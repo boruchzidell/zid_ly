@@ -3,19 +3,17 @@ let app = express();
 require('dotenv').config();
 let {pool} = require('./database_config.js');
 
-pool.query('select * from urls', (err, results) => {
-  console.log(results.rows);
-});
-
 function generateHex() {
-  const hexSixDigits = 16777215;
-  return Math.floor(Math.random() * hexSixDigits).toString(16);
+  const max = 16777215; // Hex 6 digits
+  return Math.floor(Math.random() * max).toString(16);
 }
 
 app.get('/test/:hex', (req, res, next) => {
   let hex = req.params.hex;
 
-  res.redirect(url);
+  pool.query('select original_url from urls where hex = $1', [hex], (err, results) => {
+    res.redirect(results.rows[0].original_url);
+  });
 });
 
 app.get('/', (req, res, next) => {

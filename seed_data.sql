@@ -8,6 +8,6 @@ create table urls (
 );
 
 insert into urls (hex, original_url)
-values('aaa', 'http://www.google.com');
+values('aaa', 'http://www.google.com'), ('bbb', 'http://www.amazon.com'), ('fly', 'https://fly.io/apps/baz-test/monitoring');
 
--- select * from urls u ;
+select * from urls u ;
