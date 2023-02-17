@@ -3,6 +3,8 @@ let app = express();
 require('dotenv').config();
 let {pool} = require('./database_config.js');
 
+app.use(express.static('public'));
+
 function generateHex() {
   const max = 16777215; // Hex 6 digits
   return Math.floor(Math.random() * max).toString(16);
