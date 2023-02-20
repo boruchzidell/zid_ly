@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  overflow: hidden;
+}
+
+.show {
+  display: block;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+button a {
+  text-decoration: none;
+}
+
+button a:visited {
+  color: black;
+}
+
+#copy-btn {
+  box-sizing: content-box;
+  width: 3rem;
+}
+
+main {
+  position: absolute;
+  height: 200px;
+  top: 40%;
+  left: 40%;
+  -webkit-transform: translate(-100%, -100%);
+  transform: translate(-100%, -100%);
+  text-align: center;
+  transform: scale(2);
+}
+
+/* main * {
+  margin: 20px;
+} */
+
+::placeholder {
+  color: #c3c0c0;
+}

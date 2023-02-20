@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="scripts/index.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="./stylesheets/app.css" />
+    <script src="./scripts/index.js" type="application/javascript"></script>
     <title>Zid.ly URL Shortener</title>
   </head>
   <body>
-    <form id="url-form">
-      <label for="original-url">Enter URL to shorten: </label>
-      <input id="original-url" type="text" />
+    <main>
+      <form id="url-form">
+        <label for="original-url">URL to shorten: </label>
+        <input id="original-url" type="text" placeholder="http://www.google.com" />
 
-      <input type="submit" />
-    </form>
+        <input id="submit" type="submit" value="Shrink me!" />
+      </form>
+
+      <div id="container" class="hidden">
+        <a id="shortened-url" target="_blank"></a>
+
+        <button id="copy-btn">Copy</button>
+
+        <button class="hidden"><a href="">Do another one</a></button>
+      </div>
+    </main>
+
+    <footer>Connect with me: https://www.linkedin.com/in/boruchzidell/</footer>
   </body>
 </html>
