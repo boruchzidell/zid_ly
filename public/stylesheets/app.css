@@ -22,9 +22,14 @@ button a:visited {
   color: black;
 }
 
+#submit {
+  cursor: pointer;
+}
+
 #copy-btn {
   box-sizing: content-box;
   width: 3rem;
+  cursor: pointer;
 }
 
 main {

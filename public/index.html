@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="./stylesheets/app.css" />
-    <script src="./scripts/index.js" type="application/javascript"></script>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
     <title>Zid.ly URL Shortener</title>
   </head>
   <body>
@@ -11,7 +12,7 @@
         <label for="original-url">URL to shorten: </label>
         <input id="original-url" type="text" placeholder="http://www.google.com" />
 
-        <input id="submit" type="submit" value="Shrink me!" />
+        <input id="submit" type="submit" value="Shrink me!" title="Enter a valid URL" disabled />
       </form>
 
       <div id="container" class="hidden">
@@ -19,7 +20,7 @@
 
         <button id="copy-btn">Copy</button>
 
-        <button class="hidden"><a href="">Do another one</a></button>
+        <button class="hidden"><a href>Do another one</a></button>
       </div>
     </main>
 
