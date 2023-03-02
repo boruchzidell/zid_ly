@@ -1,39 +1,28 @@
 let express = require('express');
 let app = express();
+let path = require('path');
+require('dotenv').config();
 
 let logger = require('morgan');
 let {isValidUrl} = require('./validate_urls.js');
-
-app.use(logger('dev'));
-
-// fix this
-app.use(express.static('public'));
-
-require('dotenv').config();
 let {pool} = require('./database_config.js');
 
+app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.get('/:hex', (req, res, next) => {
   let hex = req.params.hex;
 
   pool.query('select original_url from urls where hex = $1', [hex], (err, results) => {
-    if (results.rows.length === 0) {
-      err = new Error('Address not found');
-      err.status = 404;
-    }
-
     if (err) {
       next(err);
+    } else if (!results.rows.length) {
+      res.redirect(302, '/404.html');
     } else {
-      res.status(302);
-      res.redirect(results.rows[0].original_url);
+      res.redirect(302, results.rows[0].original_url);
     }
   });
-});
-
-app.get('/', (req, res, next) => {
-  res.send('Zid.ly homepage');
 });
 
 app.post('/', validateUrlHandler, (req, res, next) => {
@@ -62,8 +51,6 @@ app.use((err, req, res, next) => {
   res.status(err.status || 404);
   res.send(err.message || 'Bad request!');
 });
-
-// Handle unknown routes
 
 function generateHex() {
   const max = 16777215; // Hex 6 digits

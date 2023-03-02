@@ -50,3 +50,7 @@ main {
 ::placeholder {
   color: #c3c0c0;
 }
+
+input {
+  outline: none;
+}

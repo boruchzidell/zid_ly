@@ -10,15 +10,15 @@
     <main>
       <form id="url-form">
         <label for="original-url">URL to shorten: </label>
-        <input id="original-url" type="text" placeholder="http://www.google.com" />
+        <input id="original-url" type="text" placeholder="http://www.google.com" autofocus />
 
         <input id="submit" type="submit" value="Shrink me!" title="Enter a valid URL" disabled />
       </form>
 
       <div id="container" class="hidden">
-        <a id="shortened-url" target="_blank"></a>
+        <a id="shortened-url" target="_blank" title="Click to open me in a new tab"></a>
 
-        <button id="copy-btn">Copy</button>
+        <button id="copy-btn" title="Copy to clipboard">Copy</button>
 
         <button class="hidden"><a href>Do another one</a></button>
       </div>
