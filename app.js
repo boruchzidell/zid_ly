@@ -35,10 +35,10 @@ app.post('/', validateUrlHandler, (req, res, next) => {
     (err, results) => {
       if (err) {
         // throw new Error('Nope!');
-        console.error('Nope!');
+        console.error(err);
       } else {
         // res.send(results[0].hex)
-        console.log(results.rows[0].hex);
+        // console.log(results.rows[0].hex);
         res.send(results.rows[0].hex);
       }
     }
@@ -70,4 +70,4 @@ function validateUrlHandler(req, res, next) {
 
 let port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log('App listening on port', port));
+app.listen(port, () => console.log('Zid.ly app listening on port', port));

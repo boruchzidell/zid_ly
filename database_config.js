@@ -1,10 +1,13 @@
 const {Pool} = require('pg');
 
 // when empty, pool uses environment variables for connection information
-const pool = new Pool();
-// pool.query('select * from urls', (err, results) => {
-//   console.log(results);
-// });
+const pool = new Pool({
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT,
+});
 
 module.exports = {
   pool,
