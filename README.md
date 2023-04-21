@@ -1,10 +1,3 @@
-Live site: https://zid-ly.fly.dev/
-
-Some notes:
-URL validation takes place on FE and BE (such as making a fetch request or cURL.)
-
-Database backed
-
 <h1 align="center">Zid.ly URL Shortener</h1>
 
 ## Description
