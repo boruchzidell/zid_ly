@@ -14,6 +14,8 @@ A [bit.ly](https://bitly.com/) clone. Transforms long unwieldly URL's into nice 
 
 ## Screenshots
 
+![image](https://user-images.githubusercontent.com/47635324/233534701-3711461f-f130-4047-a0ca-b8d15c06749b.png)
+
 ## Built With
 
 - Node
