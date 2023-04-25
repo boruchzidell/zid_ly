@@ -2,7 +2,7 @@
 
 ## Description
 
-A [bit.ly](https://bitly.com/) clone. Transforms long unwieldly URL's into nice little short ones that can be easily shared.
+A [bit.ly](https://bitly.com/) clone. Transforms long unwieldy URL's into nice little short ones that can be easily shared.
 
 ## Links
 
